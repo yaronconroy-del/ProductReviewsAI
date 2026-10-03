@@ -61,6 +61,16 @@
       "transferred_at": "2026-10-03T18:17:00Z",
       "sent_at": "2026-10-03T18:15:50Z",
       "delivered_to": "App Growth Engine → פלנר"
+    },
+    {
+      "id": 7,
+      "text": "מה המצב של האפליקציות מבחינת מוכנות להעלאה?",
+      "project": "App Growth Engine",
+      "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
+      "status": "pending",
+      "created_at": "2026-10-03T20:25:51Z",
+      "transferred_at": null,
+      "sent_at": "2026-10-03T20:25:51Z"
     }
   ]
 }
