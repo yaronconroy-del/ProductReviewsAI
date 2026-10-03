@@ -22,7 +22,7 @@
    יוצא מן הכלל: הוראות שמדברות על המזכירה עצמה (איך היא עובדת, מתי מדווחת וכו').
 1. המשתמש כותב משימה → **תמיד** לשאול לאיזה פרוייקט במחשב לשייך אותה (AskUserQuestion
    עם הפרוייקטים מ-`projects.json`; אם יש יותר מ-4, להציע את הסבירים ביותר והשאר דרך "Other").
-2. להוסיף ל-`tasks.json` בסטטוס `pending`, לעשות commit + push.
+2. להוסיף ל-`tasks.json` בסטטוס `pending` (`project` = הפרוייקט שנבחר), לעשות commit + push.
 3. לוודא שה-Routine השעתי "מזכירה – בדיקת מחשב" (`trig_01VRvpSFAYcvx79wKMHBpQJy`) מופעל (`update_trigger` עם `enabled: true`).
 4. **מיד אחרי הרישום, בכל משימה חדשה, לבדוק אוטומטית אם המחשב מוכן** (`list_sessions`, כמו בבדיקה
    השעתית, סעיף 3). להעביר את המשימות הפתוחות עכשיו, בלי לחכות לשעה הבאה.
@@ -36,18 +36,12 @@
    - משימה עם `sent_at` – לא לשלוח שוב. לבדוק ב-`list_events` (limit קטן, kinds assistant) אם
      הסשן הגיב אחרי ההודעה; אם כן – זו העברה מוצלחת.
    - אם עברו 24 שעות מ-`sent_at` בלי תגובה – לשלוח שוב פעם אחת ולעדכן `sent_at`.
-   - "המחשב דלוק" = סשן כלשהו במחשב הגיב לאחרונה. אם המחשב דלוק והסשן היעד לא הגיב אחרי שתי
-     בדיקות – גיבוי ל-App Growth Engine (סעיף 4).
-4. אם המחשב דלוק – לכל משימה `pending`: `send_message` ל-`session_id` שלה עם:
-   `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>):\n\n<text>`
-   ואז לוודא שהיא הגיעה (`list_events` – הסשן הגיב אחרי ההודעה). רק אחרי אימות:
-   `status: "transferred"`, `transferred_at`.
-   אם נכשל (או שלפרוייקט אין סשן מקושר) בזמן שהמחשב דלוק – **גיבוי: להעביר ל-App Growth Engine**
-   (`session_01TXSX61A4TVDCXthhKnfrWj`) עם ההודעה:
-   `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>). המשימה מיועדת לפרוייקט "<project>", אבל לא הצלחתי להעביר אותה אליו, ולכן היא אצלך:\n\n<text>`
-   אחרי אימות: `status: "transferred"`, `transferred_at`, `delivered_to: "App Growth Engine"`, `fallback: true`,
-   ובדיווח למשתמש לציין שהמשימה עברה ל-App Growth Engine.
-   אם גם App Growth Engine נכשל – להשאיר `pending` ולנסות בשעה הבאה.
+4. **כלל קבוע: כל המשימות נשלחות רק ל-App Growth Engine** (`session_01TXSX61A4TVDCXthhKnfrWj`),
+   אף פעם לא ישירות לפרוייקט היעד. App Growth Engine הוא שמעביר הלאה. ההודעה:
+   `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>). יש להעביר אותה לפרוייקט "<project>":\n\n<text>`
+   (כשהיעד הוא App Growth Engine עצמו: `...). המשימה מיועדת לך:\n\n<text>`)
+   ואז לוודא שהיא הגיעה (`list_events` – App Growth Engine הגיב אחרי ההודעה). רק אחרי אימות:
+   `status: "transferred"`, `transferred_at`. אם לא הגיב – להשאיר `pending` ולבדוק בשעה הבאה.
 5. commit + push. כשהתור התרוקן – לכבות את ה-Routine.
 
 **דיווח למשתמש – רק על הצלחה.** להודיע רק כשמשימה הועברה בפועל ("בוצע": מה הועבר ולאן, שורה
@@ -57,7 +51,5 @@
 אי אפשר ליצור סשן במחשב מהענן. כשהמשתמש פותח פרוייקט חדש במחשב (Remote Control), למצוא אותו
 ב-`list_sessions` (environment_kind = bridge) ולהוסיף ל-`projects.json`.
 
-פרוייקט עם `session_id: null` = עדיין אין לו סשן Remote Control. מותר לרשום אליו משימות.
-בכל בדיקה שעתית שבה המחשב דלוק: לחפש ב-`list_sessions` סשן bridge שהכותרת שלו תואמת לשם
-הפרוייקט. אם נמצא, לשמור את ה-`session_id` ב-`projects.json` ובמשימות שלו, ואז להעביר.
-אם לא נמצא – המשימה עוברת לגיבוי App Growth Engine (סעיף 4 למעלה).
+השיוך לפרוייקט נשאל תמיד (כדי ש-App Growth Engine יידע לאן להעביר), גם לפרוייקטים בלי
+`session_id`. ב-`tasks.json`, `session_id` של משימה הוא תמיד של App Growth Engine.
