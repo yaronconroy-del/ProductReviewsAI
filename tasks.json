@@ -25,9 +25,9 @@
       "text": "אני רוצה אפשרות להחליק ימינה ושמאלה מהמסך הראשי, כדי להגיע למסכים האחרים של הבועות ומה שהגדרנו פעם מסך הבית.",
       "project": "פלנר",
       "session_id": "session_01S9xF4eeoP2WZLD5xNprkL7",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-03T17:00:15Z",
-      "transferred_at": null,
+      "transferred_at": "2026-10-03T17:39:06Z",
       "sent_at": "2026-10-03T17:34:11Z"
     },
     {
@@ -35,9 +35,9 @@
       "text": "לבנות פרויקט חדש על מעקב מצב רוח וטריגרים.",
       "project": "App Growth Engine",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-03T17:07:33Z",
-      "transferred_at": null,
+      "transferred_at": "2026-10-03T17:38:38Z",
       "sent_at": "2026-10-03T17:34:11Z"
     }
   ]
