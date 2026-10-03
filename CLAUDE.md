@@ -43,6 +43,8 @@
    אחרי אימות: `status: "transferred"`, `transferred_at`, `delivered_to: "App Growth Engine"`, `fallback: true`,
    ובדיווח למשתמש לציין שהמשימה עברה ל-App Growth Engine.
    אם גם App Growth Engine נכשל – להשאיר `pending` ולנסות בשעה הבאה.
+   משימה עם `sent_at` כבר נשלחה לסשן מנותק ומחכה בתור שלו – לא לשלוח שוב. לבדוק ב-`list_events`
+   של הסשן אם הוא ענה אחרי ההודעה; אם כן – לסמן `transferred` ולדווח "בוצע".
 5. commit + push. כשהתור התרוקן – לכבות את ה-Routine.
 
 **דיווח למשתמש – רק על הצלחה.** להודיע רק כשמשימה הועברה בפועל ("בוצע": מה הועבר ולאן, שורה
