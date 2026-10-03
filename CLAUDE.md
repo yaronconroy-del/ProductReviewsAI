@@ -25,26 +25,29 @@
 2. להוסיף ל-`tasks.json` בסטטוס `pending`, לעשות commit + push.
 3. לוודא שה-Routine השעתי "מזכירה – בדיקת מחשב" (`trig_01VRvpSFAYcvx79wKMHBpQJy`) מופעל (`update_trigger` עם `enabled: true`).
 4. **מיד אחרי הרישום, בכל משימה חדשה, לבדוק אוטומטית אם המחשב מוכן** (`list_sessions`, כמו בבדיקה
-   השעתית). אם הוא מוכן – להעביר את כל המשימות הפתוחות עכשיו, בלי לחכות לשעה הבאה.
+   השעתית, סעיף 3). להעביר את המשימות הפתוחות עכשיו, בלי לחכות לשעה הבאה.
 
 ## בדיקה שעתית (ה-Routine מעיר את הסשן הזה)
 1. אם אין בקונטיינר את הענף/הקבצים: `git fetch origin secretary && git checkout secretary`.
 2. אם אין משימות `pending` – לכבות את ה-Routine (`enabled: false`) ולסיים בשקט.
-3. המחשב "דלוק ומוכן" אם ב-`list_sessions` (mine: true) יש לפחות סשן אחד עם
-   `environment_kind: "bridge"` ו-`connection_status: "connected"`.
-   אם אף סשן bridge לא מחובר – המחשב כבוי: לא לשלוח כלום, לא להודיע למשתמש, לסיים.
+3. **`connection_status` לא אמין** – סשנים במחשב מופיעים `disconnected` גם כשהמחשב דלוק, ובכל זאת
+   מקבלים הודעות ועובדים עליהן (נבדק 2026-10-03). לכן הבדיקה היא בפועל:
+   - כל משימה `pending` בלי `sent_at` – לשלוח לה מיד (סעיף 4) ולרשום `sent_at`.
+   - משימה עם `sent_at` – לא לשלוח שוב. לבדוק ב-`list_events` (limit קטן, kinds assistant) אם
+     הסשן הגיב אחרי ההודעה; אם כן – זו העברה מוצלחת.
+   - אם עברו 24 שעות מ-`sent_at` בלי תגובה – לשלוח שוב פעם אחת ולעדכן `sent_at`.
+   - "המחשב דלוק" = סשן כלשהו במחשב הגיב לאחרונה. אם המחשב דלוק והסשן היעד לא הגיב אחרי שתי
+     בדיקות – גיבוי ל-App Growth Engine (סעיף 4).
 4. אם המחשב דלוק – לכל משימה `pending`: `send_message` ל-`session_id` שלה עם:
    `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>):\n\n<text>`
-   ואז לוודא שהיא הגיעה (`get_session` / `list_events` – הסשן התעורר ולא נרשמה שגיאה
-   `computer_unreachable` חדשה). רק אחרי אימות: `status: "transferred"`, `transferred_at`.
+   ואז לוודא שהיא הגיעה (`list_events` – הסשן הגיב אחרי ההודעה). רק אחרי אימות:
+   `status: "transferred"`, `transferred_at`.
    אם נכשל (או שלפרוייקט אין סשן מקושר) בזמן שהמחשב דלוק – **גיבוי: להעביר ל-App Growth Engine**
    (`session_01TXSX61A4TVDCXthhKnfrWj`) עם ההודעה:
    `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>). המשימה מיועדת לפרוייקט "<project>", אבל לא הצלחתי להעביר אותה אליו, ולכן היא אצלך:\n\n<text>`
    אחרי אימות: `status: "transferred"`, `transferred_at`, `delivered_to: "App Growth Engine"`, `fallback: true`,
    ובדיווח למשתמש לציין שהמשימה עברה ל-App Growth Engine.
    אם גם App Growth Engine נכשל – להשאיר `pending` ולנסות בשעה הבאה.
-   משימה עם `sent_at` כבר נשלחה לסשן מנותק ומחכה בתור שלו – לא לשלוח שוב. לבדוק ב-`list_events`
-   של הסשן אם הוא ענה אחרי ההודעה; אם כן – לסמן `transferred` ולדווח "בוצע".
 5. commit + push. כשהתור התרוקן – לכבות את ה-Routine.
 
 **דיווח למשתמש – רק על הצלחה.** להודיע רק כשמשימה הועברה בפועל ("בוצע": מה הועבר ולאן, שורה
