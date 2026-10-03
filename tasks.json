@@ -50,6 +50,16 @@
       "transferred_at": "2026-10-03T17:47:44Z",
       "sent_at": "2026-10-03T17:47:21Z",
       "delivered_to": "App Growth Engine → פלנר"
+    },
+    {
+      "id": 6,
+      "text": "תוסיף משימה לשאול עליה בהמשך (לפני העלאה), כשמנסים להכנס לקישור של הצטרפות למשפחה, אם אין את האפליקציה על המכשיר, המכשיר מופנה לקישור של האפליקציה בחנות",
+      "project": "פלנר",
+      "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
+      "status": "pending",
+      "created_at": "2026-10-03T18:15:50Z",
+      "transferred_at": null,
+      "sent_at": "2026-10-03T18:15:50Z"
     }
   ]
 }
