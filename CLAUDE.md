@@ -28,7 +28,12 @@
    `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>):\n\n<text>`
    ואז לוודא שהיא הגיעה (`get_session` / `list_events` – הסשן התעורר ולא נרשמה שגיאה
    `computer_unreachable` חדשה). רק אחרי אימות: `status: "transferred"`, `transferred_at`.
-   אם נכשל – להשאיר `pending` ולנסות בשעה הבאה.
+   אם נכשל (או שלפרוייקט אין סשן מקושר) בזמן שהמחשב דלוק – **גיבוי: להעביר ל-App Growth Engine**
+   (`session_01TXSX61A4TVDCXthhKnfrWj`) עם ההודעה:
+   `משימה חדשה מהמזכירה (נרשמה בטלפון ב-<created_at>). המשימה מיועדת לפרוייקט "<project>", אבל לא הצלחתי להעביר אותה אליו, ולכן היא אצלך:\n\n<text>`
+   אחרי אימות: `status: "transferred"`, `transferred_at`, `delivered_to: "App Growth Engine"`, `fallback: true`,
+   ולציין בדיווח למשתמש שהמשימה עברה לגיבוי ולמה.
+   אם גם App Growth Engine נכשל – להשאיר `pending` ולנסות בשעה הבאה.
 5. commit + push, ולדווח למשתמש בשורה אחת מה הועבר ולאן. כשהתור התרוקן – לכבות את ה-Routine.
 
 ## פרוייקט חדש במחשב
@@ -38,5 +43,5 @@
 פרוייקט עם `session_id: null` = עדיין אין לו סשן Remote Control. מותר לרשום אליו משימות.
 בכל בדיקה שעתית שבה המחשב דלוק: לחפש ב-`list_sessions` סשן bridge שהכותרת שלו תואמת לשם
 הפרוייקט. אם נמצא, לשמור את ה-`session_id` ב-`projects.json` ובמשימות שלו, ואז להעביר.
-אם לא נמצא, להשאיר `pending` ולהזכיר למשתמש (פעם אחת לכל הדלקה של המחשב) לפתוח בפרוייקט
-סשן עם Remote Control.
+אם לא נמצא – המשימה עוברת לגיבוי App Growth Engine (סעיף 4 למעלה), ולהזכיר למשתמש לפתוח
+בפרוייקט סשן עם Remote Control.
