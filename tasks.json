@@ -45,10 +45,11 @@
       "text": "אופציה למזג בועות והחלקה חזרה ממצב בועות למסך הפתיחה",
       "project": "פלנר",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-03T17:47:21Z",
-      "transferred_at": null,
-      "sent_at": "2026-10-03T17:47:21Z"
+      "transferred_at": "2026-10-03T17:47:44Z",
+      "sent_at": "2026-10-03T17:47:21Z",
+      "delivered_to": "App Growth Engine → פלנר"
     }
   ]
 }
