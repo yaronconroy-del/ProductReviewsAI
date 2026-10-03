@@ -67,9 +67,9 @@
       "text": "מה המצב של האפליקציות מבחינת מוכנות להעלאה?",
       "project": "App Growth Engine",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-03T20:25:51Z",
-      "transferred_at": null,
+      "transferred_at": "2026-10-03T20:40:00Z",
       "sent_at": "2026-10-03T20:25:51Z"
     }
   ]
