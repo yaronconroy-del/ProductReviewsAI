@@ -1,14 +1,53 @@
 {
   "_note": "פרוייקטים במחשב (סשנים של Remote Control). session_id הוא היעד שאליו המזכירה שולחת משימות.",
   "projects": [
-    { "name": "פלנר",                 "session_id": "session_01S9xF4eeoP2WZLD5xNprkL7" },
-    { "name": "App Growth Engine",    "session_id": "session_01TXSX61A4TVDCXthhKnfrWj" },
-    { "name": "ערוץ יוטיוב",          "session_id": "session_01UtzDkBYGuNifG3YminasMz" },
-    { "name": "מרכז הסקילים",         "session_id": "session_01HehU1g8m5G8XdsMMxodT1U" },
-    { "name": "מחשבון מדעי",          "session_id": "session_01Egy9s6QSDBUCHUPZzC9HLZ" },
-    { "name": "תוכן יומי לוואטסאפ",   "session_id": "session_01Xx9dfeFszH7Dv1v1AA5EWD" },
-    { "name": "פרויקט הספרים שלי",    "session_id": "session_01QtYzxMufq9qCXecW21MuXH" },
-    { "name": "תיקייה חדשה לפרוייקט", "session_id": "session_014DbRJrdrjXpmeoSfryxsda" },
-    { "name": "Gypsum picture recognition", "session_id": "session_01Td5gEwCH5ZeAF7vNR4j5uy" }
+    {
+      "name": "פלנר",
+      "session_id": "session_01S9xF4eeoP2WZLD5xNprkL7"
+    },
+    {
+      "name": "App Growth Engine",
+      "session_id": "session_01TXSX61A4TVDCXthhKnfrWj"
+    },
+    {
+      "name": "ערוץ יוטיוב",
+      "session_id": "session_01UtzDkBYGuNifG3YminasMz"
+    },
+    {
+      "name": "מרכז הסקילים",
+      "session_id": "session_01HehU1g8m5G8XdsMMxodT1U"
+    },
+    {
+      "name": "מחשבון מדעי",
+      "session_id": "session_01Egy9s6QSDBUCHUPZzC9HLZ"
+    },
+    {
+      "name": "תוכן יומי לוואטסאפ",
+      "session_id": "session_01Xx9dfeFszH7Dv1v1AA5EWD"
+    },
+    {
+      "name": "פרויקט הספרים שלי",
+      "session_id": "session_01QtYzxMufq9qCXecW21MuXH"
+    },
+    {
+      "name": "תיקייה חדשה לפרוייקט",
+      "session_id": "session_014DbRJrdrjXpmeoSfryxsda"
+    },
+    {
+      "name": "Gypsum picture recognition",
+      "session_id": "session_01Td5gEwCH5ZeAF7vNR4j5uy"
+    },
+    {
+      "name": "גנן",
+      "session_id": null
+    },
+    {
+      "name": "סקוואשי",
+      "session_id": null
+    },
+    {
+      "name": "זוזו לנד",
+      "session_id": null
+    }
   ]
 }
