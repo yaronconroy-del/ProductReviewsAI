@@ -1,3 +1,13 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "text": "ה manual נתקע כל הזמן, הוא לא זורם",
+      "project": "פלנר",
+      "session_id": "session_01S9xF4eeoP2WZLD5xNprkL7",
+      "status": "pending",
+      "created_at": "2026-10-03T16:50:56Z",
+      "transferred_at": null
+    }
+  ]
 }
