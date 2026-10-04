@@ -81,6 +81,15 @@
       "created_at": "2026-10-04T12:24:08Z",
       "transferred_at": null,
       "retry_after": "2026-10-04T14:40:00Z"
+    },
+    {
+      "id": 9,
+      "text": "במסך של הבועה הראשית חוץ מכפתור GO בסיום ההקלדה יופיעו דפים שונים (מצב משפחתי, רעיונות וכו') כבועות מעל ואוכל לגרור את הבועה החדשה ישירות לדף שאני רוצה",
+      "project": "פלנר",
+      "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
+      "status": "pending",
+      "created_at": "2026-10-04T14:44:30Z",
+      "transferred_at": null
     }
   ]
 }
