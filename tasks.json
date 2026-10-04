@@ -80,7 +80,7 @@
       "status": "pending",
       "created_at": "2026-10-04T12:24:08Z",
       "transferred_at": null,
-      "retry_after": "2026-10-04T14:40:00Z"
+      "sent_at": "2026-10-04T14:44:45Z"
     },
     {
       "id": 9,
@@ -89,7 +89,8 @@
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
       "status": "pending",
       "created_at": "2026-10-04T14:44:30Z",
-      "transferred_at": null
+      "transferred_at": null,
+      "sent_at": "2026-10-04T14:44:45Z"
     }
   ]
 }
