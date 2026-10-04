@@ -77,20 +77,22 @@
       "text": "אני רוצה קיצור דרך ממסך הקוד למסך הבית",
       "project": "App Growth Engine (ללא העדפה – הוא מחליט)",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-04T12:24:08Z",
-      "transferred_at": null,
-      "sent_at": "2026-10-04T14:44:45Z"
+      "transferred_at": "2026-10-04T14:46:52Z",
+      "sent_at": "2026-10-04T14:44:45Z",
+      "note": "App Growth Engine: בוטלה לבקשת המשתמש"
     },
     {
       "id": 9,
       "text": "במסך של הבועה הראשית חוץ מכפתור GO בסיום ההקלדה יופיעו דפים שונים (מצב משפחתי, רעיונות וכו') כבועות מעל ואוכל לגרור את הבועה החדשה ישירות לדף שאני רוצה",
       "project": "פלנר",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-04T14:44:30Z",
-      "transferred_at": null,
-      "sent_at": "2026-10-04T14:44:45Z"
+      "transferred_at": "2026-10-04T14:46:46Z",
+      "sent_at": "2026-10-04T14:44:45Z",
+      "delivered_to": "App Growth Engine → פלנר"
     }
   ]
 }
