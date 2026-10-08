@@ -142,10 +142,11 @@
       "text": "אי אפשר למחוק הודעות ואני רוצה גם אופציה לrewind",
       "project": "קאי",
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
-      "status": "pending",
+      "status": "transferred",
       "created_at": "2026-10-08T10:28:20Z",
-      "transferred_at": null,
-      "sent_at": "2026-10-08T10:28:20Z"
+      "transferred_at": "2026-10-08T10:28:34Z",
+      "sent_at": "2026-10-08T10:28:20Z",
+      "delivered_to": "נג'י → קאי (בתור, המחשב של קאי כבוי)"
     }
   ]
 }
