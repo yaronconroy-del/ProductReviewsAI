@@ -158,6 +158,16 @@
       "transferred_at": null,
       "retry_after": "2026-10-14T05:00:00Z",
       "note": "המשתמש ביקש לשלוח ב-14.10 כשהלימט משתחרר"
+    },
+    {
+      "id": 16,
+      "text": "כאשר יש בועה לביצוע והיא קופצת למשל צחצוח שיניים.  יש 2 אופציות לפוצץ או להזכיר לי עוד 10, 20, 30, כל פעם רווח של עשר דקות",
+      "project": "פלנר",
+      "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
+      "status": "pending",
+      "created_at": "2026-10-13T14:49:36Z",
+      "transferred_at": null,
+      "sent_at": "2026-10-13T14:49:36Z"
     }
   ]
 }
