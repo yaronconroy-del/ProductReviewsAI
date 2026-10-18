@@ -189,7 +189,8 @@
       "session_id": "session_01TXSX61A4TVDCXthhKnfrWj",
       "status": "pending",
       "created_at": "2026-10-18T17:34:02Z",
-      "transferred_at": null
+      "transferred_at": null,
+      "sent_at": "2026-10-18T17:34:15Z"
     }
   ]
 }
